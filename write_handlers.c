@@ -167,6 +167,7 @@ if (precision > 0 && precision < length)
 padd = ' ';
 
 while (precision > length)
+
 {
 buffer[--ind] = '0';
 length++;
@@ -183,6 +184,7 @@ buffer[i] = padd;
 buffer[i] = '\0';
 
 if (flags & F_MINUS) /* Asign extra char to left of buffer [buffer>padd]*/
+
 {
 return (write(1, &buffer[ind], length) + write(1, &buffer[0], i));
 }
@@ -220,6 +222,7 @@ buffer[i] = padd;
 buffer[i] = '\0';
 if (flags & F_MINUS && padd == ' ')/* Asign extra char to left of buffer */
 {
+
 buffer[--ind] = 'x';
 buffer[--ind] = '0';
 if (extra_c)
@@ -228,6 +231,7 @@ return (write(1, &buffer[ind], length) + write(1, &buffer[3], i - 3));
 }
 else if (!(flags & F_MINUS) && padd == ' ')/* extra char to left of buffer */
 {
+
 buffer[--ind] = 'x';
 buffer[--ind] = '0';
 if (extra_c)

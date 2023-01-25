@@ -37,6 +37,7 @@ buffer[ind--] = map_to[num_addrs % 16];
 num_addrs /= 16;
 length++;
 }
+
 if ((flags & F_ZERO) && !(flags & F_MINUS))
 padd = '0';
 if (flags & F_PLUS)
@@ -114,10 +115,11 @@ UNUSED(flags);
 UNUSED(width);
 UNUSED(size);
 
-str = va_arg(types, char *)
+str = va_arg(types, char *);
 
 if (str == NULL)
 {
+
 UNUSED(precision);
 
 str = ")Null(";
@@ -171,7 +173,6 @@ for (j = 0; in[j]; j++)
 if (in[j] == str[i])
 {
 x = out[j];
-
 write(1, &x, 1);
 count++;
 break;
